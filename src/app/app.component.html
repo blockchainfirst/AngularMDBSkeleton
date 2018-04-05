@@ -4,18 +4,17 @@
   </logo>
   <links>
       <ul class="navbar-nav mr-auto">
-          <li class="nav-item active waves-light" mdbRippleRadius>
-              <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item waves-light" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}" mdbRippleRadius>
+              <a class="nav-link" [routerLink]="['']" >Home</a>
           </li>
-          <li class="nav-item waves-light" mdbRippleRadius>
-              <a class="nav-link">Features</a>
-          </li>
-          <li class="nav-item waves-light" mdbRippleRadius>
-              <a class="nav-link">Pricing</a>
-          </li>
-          <li class="nav-item waves-light" mdbRippleRadius>
+          <li class="nav-item waves-light" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}" mdbRippleRadius>
+              <a class="nav-link" [routerLink]="['about']" >About</a>
+          </li>          
+          <!-- <li class="nav-item waves-light" mdbRippleRadius>
               <a class="nav-link">Opinions</a>
-          </li>
+          </li> -->
       </ul>
       <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item waves-light" mdbRippleRadius>
@@ -32,7 +31,7 @@
 </mdb-navbar>
 <!-- Main -->
 <main>
-  <div class="container" style="height:1300px;">
-      
-  </div>
+    <div style="height:1300px; margin:90px 20px;">        
+        <router-outlet></router-outlet>
+    </div>
 </main>
