@@ -6,11 +6,11 @@
       <ul class="navbar-nav mr-auto">
           <li class="nav-item waves-light" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
             true}" mdbRippleRadius>
-              <a class="nav-link" [routerLink]="['']" >Home</a>
+              <a class="nav-link" [routerLink]="['']" >{{ 'NAVIGATION.HOME' | translate }}</a>
           </li>
           <li class="nav-item waves-light" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
             true}" mdbRippleRadius>
-              <a class="nav-link" [routerLink]="['about']" >About</a>
+              <a class="nav-link" [routerLink]="['about']" >{{ 'NAVIGATION.ABOUT' | translate }}</a>
           </li>          
           <!-- <li class="nav-item waves-light" mdbRippleRadius>
               <a class="nav-link">Opinions</a>
@@ -32,6 +32,11 @@
 <!-- Main -->
 <main>
     <div style="height:1300px; margin:90px 20px;">        
+            <!-- <h2>{{ 'HOME.TITLE' | translate }}</h2>
+            <button (click)="switchLanguage('en')">EN</button>
+            <button (click)="switchLanguage('de')">DE</button>
+            <button (click)="switchLanguage('th')">TH</button> -->
+             <router-outlet></router-outlet>
         <router-outlet></router-outlet>
     </div>
 </main>
