@@ -1,7 +1,10 @@
 <mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark bg-blue scrolling-navbar" [containerInside]="true">
-  <logo>
-      <a class="logo navbar-brand" href="#"><strong>Blockchainfirst</strong></a>
-  </logo>
+    <logo>
+        <a class="navbar-brand" href="#">
+            <img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" height="30" alt="">
+            Blockchainfirst
+        </a>
+    </logo>
   <links>
       <ul class="navbar-nav mr-auto">
           <li class="nav-item waves-light" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
@@ -26,14 +29,22 @@
           <li class="nav-item waves-light" mdbRippleRadius>
               <a class="nav-link"><i class="fa fa-instagram"></i></a>
           </li>
+          <!-- Dropdown -->         
+          <li class="nav-item dropdown btn-group" dropdown (change)="selectName($event)" (onShown)="onShown($event)" (isOpenChange)="isOpenChange($event)" (onHidden)="onHidden($event)">
+                <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
+                {{language.name}}<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu" [(ngModel)]="nameId" name="Id" >
+                    <a (click)="switchLanguage(language);" [ngValue]="language.name" *ngFor="let language of languages" class="dropdown-item waves-light" href="#" mdbRippleRadius>{{language.name}}</a>                    
+                </div>
+          </li>         
       </ul>
   </links>
 </mdb-navbar>
 <!-- Main -->
 <main>
     <div style="height:1300px; margin:90px 20px;">        
-            <!-- <h2>{{ 'HOME.TITLE' | translate }}</h2>
-            <button (click)="switchLanguage('en')">EN</button>
+            <h2>{{ 'HOME.TITLE' | translate }}</h2>
+            <!-- <button (click)="switchLanguage('en')">EN</button>
             <button (click)="switchLanguage('de')">DE</button>
             <button (click)="switchLanguage('th')">TH</button> -->
              <router-outlet></router-outlet>
