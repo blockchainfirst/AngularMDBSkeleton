@@ -9,7 +9,7 @@ import {TranslateService} from '@ngx-translate/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';  
+  title = 'Appname';  
   languages: Array<any> = [{
       name: 'English',
       short: 'en'
